@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 # Set the environment to "test"
 ENV['RACK_ENV'] = 'test'
@@ -15,16 +16,15 @@ require_relative './setup_test_database'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
+  # Want a nice code coverage website?
   SimpleCov::Formatter::HTMLFormatter
-])
+  ])
 SimpleCov.start
 
 # Tell Capybara to talk to MeakPicker
 Capybara.app = MealPicker
 
 RSpec.configure do |config|
-
   config.before(:each) do
     setup_test_database
   end
@@ -34,10 +34,8 @@ RSpec.configure do |config|
   end
 
   config.mock_with :rspec do |mocks|
-   
     mocks.verify_partial_doubles = true
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
 end
