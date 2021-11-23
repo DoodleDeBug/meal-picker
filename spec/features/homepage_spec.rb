@@ -6,8 +6,17 @@ feature 'homepage' do
     expect(page).to have_title 'Meal Picker'
   end
 
-  # scenario 'shows meal category options:' do
-  #   visit '/'
+  scenario 'shows meal category options:' do
+    visit '/'
 
-  # end
+    within('#meal_category_form') { 
+      expect(page).to have_content 'Chicken' 
+      expect(page).to have_content 'Fish'
+      expect(page).to have_content 'Meat'
+      expect(page).to have_content 'Veg'
+
+      expect(page).to have_button 'Get Meal Suggestion!'
+    }
+
+  end
 end
