@@ -19,4 +19,13 @@ feature 'homepage' do
     }
 
   end
+
+  scenario 'meal category options have form css' do
+    visit '/'
+
+    within('.form_container') { 
+      expect(page).to have_css '.form' 
+    }
+
+  end
 end

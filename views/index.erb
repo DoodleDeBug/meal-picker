@@ -10,16 +10,18 @@
   </head>
   <body>
     <h1 class="title">Meal Picker</h1>
-    <div>
+    <div class="form_container">
       <form id="meal_category_form" class="form" action="/" method="post">
-        <input type="radio" id="chicken" name="category" value="chicken" required>
-        <label for="chicken">Chicken</label><br>
-        <input type="radio" id="fish" name="category" value="fish">
-        <label for="fish">Fish</label><br>
-        <input type="radio" id="meat" name="category" value="meat">
-        <label for="meat">Meat</label><br>
-        <input type="radio" id="veg" name="category" value="veg">
-        <label for="veg">Veg</label><br>
+        <div class="options">
+          <input type="radio" id="chicken" name="category" value="chicken" required>
+          <label for="chicken">Chicken</label><br>
+          <input type="radio" id="fish" name="category" value="fish">
+          <label for="fish">Fish</label><br>
+          <input type="radio" id="meat" name="category" value="meat">
+          <label for="meat">Meat</label><br>
+          <input type="radio" id="veg" name="category" value="veg">
+          <label for="veg">Veg</label><br>
+        </div>
         <input class="button" type="submit" value="Get Meal Suggestion!">
       </form>
     </div>

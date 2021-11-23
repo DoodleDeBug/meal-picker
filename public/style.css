@@ -12,3 +12,45 @@
   font-size: 50px;
   letter-spacing: 2px;
 }
+
+.form {
+  background-color: rgb(159, 185, 185);
+  padding: 1rem;
+  margin: 0 20%;
+  min-width: min-content;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+input[type="radio"] {
+  visibility:hidden;
+}
+
+label {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  width: 150px;
+  background-color: chartreuse;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+label:hover {
+  background-color: rgb(100, 192, 9);
+}
+
+input:checked + label {
+  background: rgb(100, 192, 9);
+}
+
+.button {
+  margin: 1rem auto;
+  display: flex;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
