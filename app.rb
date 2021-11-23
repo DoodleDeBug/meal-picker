@@ -10,7 +10,7 @@ class MealPicker < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    erb :index
   end
 
   run! if app_file == $PROGRAM_NAME
