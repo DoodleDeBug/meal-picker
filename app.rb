@@ -2,6 +2,7 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/meal.rb'
 
 class MealPicker < Sinatra::Base
   configure :development, :test do
@@ -13,7 +14,7 @@ class MealPicker < Sinatra::Base
     if session[:type]
       @msg = "You picked #{session[:type]}"
     end
-
+    @meals = Meal.all('chicken')
     erb :index
   end
 

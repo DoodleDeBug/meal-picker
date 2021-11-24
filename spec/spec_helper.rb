@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Set the environment to "test"
-ENV['RACK_ENV'] = 'test'
+ENV['ENVIRONMENT'] = 'test'
 
 # Require all the testing gems
 require 'capybara'

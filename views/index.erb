@@ -34,6 +34,15 @@
     <%# end of form container%>
     <div id="msg_container" class="container">
       <p><%= @msg %></p>
+      <div>
+        <ul>
+          <% @meals.each do |meal| %>
+            <li>
+              <p><%= meal%></p>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
