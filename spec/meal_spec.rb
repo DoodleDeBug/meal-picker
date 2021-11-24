@@ -20,8 +20,8 @@ describe Meal do
   
     it 'returns a list of meals in the chicken category' do
       # Add the test data
-      conn.exec("INSERT INTO meals (name, category) VALUES ('Chicken Pot Pie', 'chicken');")
-      conn.exec("INSERT INTO meals (name, category) VALUES ('Pilau', 'chicken');")
+      Meal.create(name: 'Chicken Pot Pie', category: 'chicken')
+      Meal.create(name: 'Pilau', category: 'chicken')
 
       chicken_meals = Meal.all('chicken')
 
@@ -31,8 +31,8 @@ describe Meal do
 
     it 'returns a list of meals in the meat category' do
       # Add the test data
-      conn.exec("INSERT INTO meals (name, category) VALUES ('Lasagna', 'meat');")
-  conn.exec("INSERT INTO meals (name, category) VALUES ('Meatballs', 'meat');")
+      Meal.create(name: 'Lasagna', category: 'meat')
+      Meal.create(name: 'Meatballs', category: 'meat')
 
       meat_meals = Meal.all('meat')
       
@@ -42,8 +42,8 @@ describe Meal do
 
     it 'returns a list of meals in the fish category' do
       # Add the test data
-      conn.exec("INSERT INTO meals (name, category) VALUES ('Oven Salmon', 'fish');")
-      conn.exec("INSERT INTO meals (name, category) VALUES ('Frozen Fish and Chips', 'fish');")
+      Meal.create(name: 'Oven Salmon', category: 'fish')
+      Meal.create(name: 'Frozen Fish and Chips', category: 'fish')
 
       fish_meals = Meal.all('fish')
       
@@ -53,8 +53,8 @@ describe Meal do
 
     it 'returns a list of meals in the veg category' do
       # Add the test data
-      conn.exec("INSERT INTO meals (name, category) VALUES ('Gajar Aloo', 'veg');")
-      conn.exec("INSERT INTO meals (name, category) VALUES ('Bean Burgers', 'veg');")
+      Meal.create(name: 'Gajar Aloo', category: 'veg')
+      Meal.create(name: 'Bean Burgers', category: 'veg')
 
       veg_meals = Meal.all('veg')
       

@@ -26,7 +26,11 @@ class Meal
     result.map { |meal| meal['name']} # returns an array of meal names
   end
 
-  def self.random
+  def self.random(category)
+
+    # meals =  self.all(category)
+    # index = random num between 0-meals.length
+    #return meals[index] aka random meal from the given category
 
   end
 

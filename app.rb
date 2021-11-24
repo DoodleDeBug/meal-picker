@@ -11,10 +11,8 @@ class MealPicker < Sinatra::Base
   end
 
   get '/' do
-    if session[:type]
-      @msg = "You picked #{session[:type]}"
-    end
-    @meals = Meal.all('chicken')
+    @meals = Meal.all(session[:type])
+    # @meal_suggestion = Meal.random(session[:type])
     erb :index
   end
 
