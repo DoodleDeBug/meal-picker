@@ -3,13 +3,20 @@
   padding: 0;
   margin: 0;
   /* font-family: monospace; */
-  /* font-size: 20px; */
+  font-size: 20px;
 }
 
 .title {
   text-align: center;
   margin: 4rem 0;
   font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.subTitle {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 30px;
   letter-spacing: 2px;
 }
 
@@ -20,6 +27,19 @@
   min-width: min-content;
 }
 
+.button {
+  margin: 1rem auto;
+  display: flex;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.container {
+  text-align: center;
+}
+
+/* homepage form specific styles */
+
 .options {
   display: flex;
   justify-content: center;
@@ -28,16 +48,17 @@
 
 input[type="radio"] {
   visibility:hidden;
+  display: none;
 }
 
 label {
+  margin: 1rem;
   cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 2px;
-  width: 150px;
   background-color: chartreuse;
   text-align: center;
-  margin: 1rem 0;
+  width: 150px;
 }
 
 label:hover {
@@ -48,9 +69,3 @@ input:checked + label {
   background: rgb(100, 192, 9);
 }
 
-.button {
-  margin: 1rem auto;
-  display: flex;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}

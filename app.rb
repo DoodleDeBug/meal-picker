@@ -4,13 +4,25 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 
 class MealPicker < Sinatra::Base
-  enable :sessions
-  configure :development do
+  configure :development, :test do
+    enable :sessions
     register Sinatra::Reloader
   end
 
   get '/' do
+    if session[:type]
+      @msg = "You picked #{session[:type]}"
+    end
+
     erb :index
+  end
+
+  post '/' do
+    session[:type] = params[:category]
+
+    p session[:type]
+
+    redirect '/'
   end
 
   run! if app_file == $PROGRAM_NAME

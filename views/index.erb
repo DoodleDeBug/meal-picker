@@ -10,20 +10,30 @@
   </head>
   <body>
     <h1 class="title">Meal Picker</h1>
+    <%# separator %>
     <div class="form_container">
+      <h2 class="subTitle">Choose Your Meal Category</h2>
       <form id="meal_category_form" class="form" action="/" method="post">
         <div class="options">
           <input type="radio" id="chicken" name="category" value="chicken" required>
-          <label for="chicken">Chicken</label><br>
+          <label for="chicken">Chicken</label>
+          <%# separator %>
           <input type="radio" id="fish" name="category" value="fish">
-          <label for="fish">Fish</label><br>
+          <label for="fish">Fish</label>
+          <%# separator %>
           <input type="radio" id="meat" name="category" value="meat">
-          <label for="meat">Meat</label><br>
+          <label for="meat">Meat</label>
+          <%# separator %>
           <input type="radio" id="veg" name="category" value="veg">
-          <label for="veg">Veg</label><br>
+          <label for="veg">Veg</label>
         </div>
+        <%# end of options %>
         <input class="button" type="submit" value="Get Meal Suggestion!">
       </form>
+    </div>
+    <%# end of form container%>
+    <div id="msg_container" class="container">
+      <p><%= @msg %></p>
     </div>
   </body>
 </html>
