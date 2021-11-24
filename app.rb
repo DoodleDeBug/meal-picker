@@ -20,8 +20,6 @@ class MealPicker < Sinatra::Base
   post '/' do
     session[:type] = params[:category]
 
-    p session[:type]
-
     redirect '/'
   end
 
