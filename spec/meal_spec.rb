@@ -23,10 +23,11 @@ describe Meal do
       Meal.create(name: 'Chicken Pot Pie', category: 'chicken')
       Meal.create(name: 'Pilau', category: 'chicken')
 
-      chicken_meals = Meal.all('chicken')
+      meals = Meal.all('chicken')
+      meals_names = meals.map { |meal| meal.name}
 
-      expect(chicken_meals).to include "Chicken Pot Pie"
-      expect(chicken_meals).to include "Pilau"
+      expect(meals_names).to include "Chicken Pot Pie"
+      expect(meals_names).to include "Pilau"
     end
 
     it 'returns a list of meals in the meat category' do
@@ -34,10 +35,11 @@ describe Meal do
       Meal.create(name: 'Lasagna', category: 'meat')
       Meal.create(name: 'Meatballs', category: 'meat')
 
-      meat_meals = Meal.all('meat')
+      meals = Meal.all('meat')
+      meals_names = meals.map { |meal| meal.name}
       
-      expect(meat_meals).to include "Lasagna"
-      expect(meat_meals).to include "Meatballs"
+      expect(meals_names).to include "Lasagna"
+      expect(meals_names).to include "Meatballs"
     end
 
     it 'returns a list of meals in the fish category' do
@@ -45,10 +47,11 @@ describe Meal do
       Meal.create(name: 'Oven Salmon', category: 'fish')
       Meal.create(name: 'Frozen Fish and Chips', category: 'fish')
 
-      fish_meals = Meal.all('fish')
+      meals = Meal.all('fish')
+      meals_names = meals.map { |meal| meal.name}
       
-      expect(fish_meals).to include "Oven Salmon"
-      expect(fish_meals).to include "Frozen Fish and Chips"
+      expect(meals_names).to include "Oven Salmon"
+      expect(meals_names).to include "Frozen Fish and Chips"
     end
 
     it 'returns a list of meals in the veg category' do
@@ -56,10 +59,49 @@ describe Meal do
       Meal.create(name: 'Gajar Aloo', category: 'veg')
       Meal.create(name: 'Bean Burgers', category: 'veg')
 
-      veg_meals = Meal.all('veg')
+      meals = Meal.all('veg')
+      meals_names = meals.map { |meal| meal.name}
       
-      expect(veg_meals).to include "Gajar Aloo"
-      expect(veg_meals).to include "Bean Burgers"
+      expect(meals_names).to include "Gajar Aloo"
+      expect(meals_names).to include "Bean Burgers"
+    end
+  end
+
+  describe '.random()' do
+    it 'returns random meal in chicken category' do
+      Meal.create(name: 'Chicken Pot Pie', category: 'chicken')
+  
+      meal = Meal.random('chicken')
+
+      expect(meal.name).to eq 'Chicken Pot Pie'
+      expect(meal.category).to eq 'chicken'
+    end
+
+    it 'returns random meal in meat category' do
+      Meal.create(name: 'Lasagna', category: 'meat')
+  
+      meal = Meal.random('meat')
+
+      expect(meal.name).to eq 'Lasagna'
+      expect(meal.category).to eq 'meat'
+    end
+
+    it 'returns random meal in fish category' do
+      Meal.create(name: 'Fish Pie', category: 'fish')
+  
+      meal = Meal.random('fish')
+
+      expect(meal.name).to eq 'Fish Pie'
+      expect(meal.category).to eq 'fish'
+    end
+
+    it 'returns random meal in veg category' do
+      Meal.create(name: 'Bean Burgers', category: 'veg')
+  
+      meal = Meal.random('veg')
+
+      expect(meal.name).to eq 'Bean Burgers'
+      expect(meal.category).to eq 'veg'
     end
   end
 

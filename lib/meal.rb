@@ -23,15 +23,13 @@ class Meal
 
     result = conn.exec("SELECT * FROM meals WHERE category='#{category}';")
 
-    result.map { |meal| meal['name']} # returns an array of meal names
+    result.map { |meal| Meal.new(id: meal['id'], name: meal['name'], category: meal['category'])} # returns an array of meal names
   end
 
   def self.random(category)
-
-    # meals =  self.all(category)
-    # index = random num between 0-meals.length
-    #return meals[index] aka random meal from the given category
-
+    meals =  self.all(category)
+    index = rand(meals.length)
+    return meals[index] # aka random meal from the array of meals in a certain category
   end
 
 end
