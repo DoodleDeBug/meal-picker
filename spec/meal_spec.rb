@@ -1,4 +1,5 @@
 require_relative './../lib/meal'
+require_relative './test_helpers.rb'
 
 describe Meal do
 
@@ -16,15 +17,12 @@ describe Meal do
 
   describe '.all()' do
 
-    conn = PG.connect(dbname: 'meal_picker_test')
-  
     it 'returns a list of meals in the chicken category' do
       # Add the test data
       Meal.create(name: 'Chicken Pot Pie', category: 'chicken')
       Meal.create(name: 'Pilau', category: 'chicken')
 
-      meals = Meal.all('chicken')
-      meals_names = meals.map { |meal| meal.name}
+      meals_names = Meal.all('chicken').map { |meal| meal.name}
 
       expect(meals_names).to include "Chicken Pot Pie"
       expect(meals_names).to include "Pilau"
@@ -35,8 +33,7 @@ describe Meal do
       Meal.create(name: 'Lasagna', category: 'meat')
       Meal.create(name: 'Meatballs', category: 'meat')
 
-      meals = Meal.all('meat')
-      meals_names = meals.map { |meal| meal.name}
+      meals_names = Meal.all('meat').map { |meal| meal.name}
       
       expect(meals_names).to include "Lasagna"
       expect(meals_names).to include "Meatballs"
@@ -47,8 +44,7 @@ describe Meal do
       Meal.create(name: 'Oven Salmon', category: 'fish')
       Meal.create(name: 'Frozen Fish and Chips', category: 'fish')
 
-      meals = Meal.all('fish')
-      meals_names = meals.map { |meal| meal.name}
+      meals_names = Meal.all('fish').map { |meal| meal.name}
       
       expect(meals_names).to include "Oven Salmon"
       expect(meals_names).to include "Frozen Fish and Chips"
@@ -59,8 +55,7 @@ describe Meal do
       Meal.create(name: 'Gajar Aloo', category: 'veg')
       Meal.create(name: 'Bean Burgers', category: 'veg')
 
-      meals = Meal.all('veg')
-      meals_names = meals.map { |meal| meal.name}
+      meals_names = Meal.all('veg').map { |meal| meal.name}
       
       expect(meals_names).to include "Gajar Aloo"
       expect(meals_names).to include "Bean Burgers"

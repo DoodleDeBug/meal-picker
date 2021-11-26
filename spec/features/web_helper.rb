@@ -14,3 +14,11 @@ def insert_data_and_vist_home
   visit '/'
   
 end
+
+def select_category_and_submit(type)
+
+  find('div.options', :text => "#{type.capitalize}").choose(type)
+
+    click_on 'Get Meal Suggestion!'
+
+end
