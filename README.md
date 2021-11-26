@@ -1,12 +1,27 @@
 # Meal Picker
 
-Randomly suggests a meal from the category you pick
+Presenting: My solution to the age old question "What is for dinner?". This simple web app allows the user to click on a meal category and recieve a random suggestion for a meal from that category.
 
 ## Tech Used:
 
+- Ruby
+- Sinatra
+- Rspec
+- Postgres
+- CSS
+- HTML
+- Cabybara
+
 ## Screenshots:
 
-## Run Tests:
+## How to Use:
+
+1. Fork and clone this repo
+2. `cd` into the folder
+3. Set up the database
+4. Enter the data/ meals you want
+5. Run `bundle`
+6. Run `rackup`
 
 ## Set up Database:
 
@@ -17,7 +32,13 @@ Randomly suggests a meal from the category you pick
 - Run `\c <database name>;`
 - Run the queries saved in db/migrations/01_create_meals_tables.sql
 
-## How to Use:
+## Run Tests:
+
+1. Fork and clone this repo
+2. `cd` into the folder
+3. Set up the test database
+4. Run `bundle`
+5. Run `rspec`
 
 ## User Stories:
 
