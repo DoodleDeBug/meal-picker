@@ -44,14 +44,16 @@ v1: completed 26/11/21 - First 2 user stories completed, css needs work, might u
 
 ## User Stories:
 
+//done//
 ```
 As a User
-So that I can recieve a random meal suggestion //done//
+So that I can recieve a random meal suggestion 
 I want to choose a meal category
 ```
+//done//
 ```
 As a User
-So that I can decide what to eat //done//
+So that I can decide what to eat 
 I want to press a button that generates a random meal suggestion
 ```
 ```
