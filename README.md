@@ -2,6 +2,8 @@
 
 Presenting: My solution to the age old question "What is for dinner?". This simple web app allows the user to click on a meal category and recieve a random suggestion for a meal from that category.
 
+v1: completed 26/11/21 - First 2 user stories completed, css needs work, might use bootstrap, tests definately need refactoring, it is annoying to keep reselecting the category when I want a new suggestion so might make the selection persist until it is changed, looking forward to adding new meals via the web-app so I don't have to keep doing it manually in the database.
+
 ## Tech Used:
 
 - Ruby
