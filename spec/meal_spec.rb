@@ -1,5 +1,4 @@
 require_relative './../lib/meal'
-require_relative './test_helpers.rb'
 
 describe Meal do
 
